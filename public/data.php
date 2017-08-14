@@ -24,7 +24,9 @@ $results['cols'] = [
     ]
 ];
 
-foreach($pdo->query("SELECT * FROM speedtests ORDER BY `time` ASC") as $speedtest){
+$timeCutoff = date("Y-m-d H:i:s", strtotime($_GET['cutoff'] ? $_GET['cutoff'] : "1 week ago"));
+
+foreach($pdo->query("SELECT * FROM speedtests WHERE `time` >= \"{$timeCutoff}\" ORDER BY `time` ASC") as $speedtest){
     $result = [
         ['v' => date_format_for_google_maps($speedtest['time'])],
         ['v' => $speedtest['up']/1000000, 'f' => number_format($speedtest['up']/1000000,2) . "Mbps"],

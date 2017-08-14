@@ -1,3 +1,6 @@
+<?php
+$cutoff = $_GET['cutoff'] ? $_GET['cutoff'] : "1 week ago";
+?>
 <html>
 <head>
     <!--Load the AJAX API-->
@@ -14,7 +17,7 @@
         function drawChart() {
 
             var jsonData = $.ajax({
-                url: "data.php",
+                url: "data.php?cutoff=<?=urlencode($cutoff);?>",
                 dataType: "json",
                 async: false
             }).responseText;
