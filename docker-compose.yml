@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  monitor:
+    image: matthewbaggett/netmon-stats
+    build: .
+    volumes:
+      - ./:/app
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=netmon
+      - MYSQL_PASSWORD=8j2o5N8Ctb5v2kQ
+      - MYSQL_DATABASE=netmon

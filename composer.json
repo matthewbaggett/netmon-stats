@@ -1,0 +1,12 @@
+{
+    "name": "matthewbaggett/netmon-speedstats",
+    "require": {
+        "predis/predis": "^1.1"
+    },
+    "authors": [
+        {
+            "name": "Matthew Baggett",
+            "email": "matthew@baggett.me"
+        }
+    ]
+}
