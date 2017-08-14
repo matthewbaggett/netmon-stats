@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  monitor:
+  stats:
     image: matthewbaggett/netmon-stats
     build: .
     volumes:
@@ -11,3 +11,5 @@ services:
       - MYSQL_USER=netmon
       - MYSQL_PASSWORD=8j2o5N8Ctb5v2kQ
       - MYSQL_DATABASE=netmon
+    ports:
+      - '10000:80'
