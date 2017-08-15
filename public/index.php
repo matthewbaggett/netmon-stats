@@ -1,5 +1,7 @@
 <?php
+$environment = array_merge($_SERVER, $_ENV);
 $cutoff = $_GET['cutoff'] ? $_GET['cutoff'] : "1 week ago";
+$testedService = $environment['TESTED_SERVICE_LABEL'];
 ?>
 <html>
 <head>
@@ -26,7 +28,7 @@ $cutoff = $_GET['cutoff'] ? $_GET['cutoff'] : "1 week ago";
 
             var options = {
                 chart: {
-                    title: 'Virgin Media Performance',
+                    title: '<?=$testedService;?>',
                 },
                 series: {
                     0: { axis: "Bandwidth" },
