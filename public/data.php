@@ -37,6 +37,8 @@ foreach($pdo->query("SELECT * FROM speedtests WHERE `time` >= \"{$timeCutoff}\" 
     $results['rows'][] = ['c' => $result];
 }
 
+header('Access-Control-Allow-Origin: *');
+
 echo json_encode($results, JSON_PRETTY_PRINT);
 
 function date_format_for_google_maps($time){
